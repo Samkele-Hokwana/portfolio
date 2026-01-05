@@ -2,7 +2,7 @@
   "name": "sam-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "samkele-hokwana.github.io/samkelehokwana.github.io",
+  "homepage": "https://samkele-hokwana.github.io/sam-portfolio",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
