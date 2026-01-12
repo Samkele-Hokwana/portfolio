@@ -22,7 +22,7 @@ const ProjectCardData = [
         imgsrc: pro2,
         title: "Database System's Portfolio",
         text: "This portfolio is from one of my final year modules(Database Systems) serves as a proof of my relational database skills, and it shows my ups and downs of my learning journey.",
-        view: openPDF(portF1),
+        view: () => openPDF(portF1),
         source: "https://www.youtube.com/watch?v=0h2b4ftbZcU&list=PPSV"
     }
 
