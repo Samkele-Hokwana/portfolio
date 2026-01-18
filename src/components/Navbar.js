@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import "./NavbarStyles.css"
-import React, { useState } from 'react'
+import profilePic from "../assets/profile-picture.png"
+import React, { useEffect, useState } from 'react'
 import { FaBars, FaTimes } from "react-icons/fa"
 
 const Navbar = () => {
@@ -8,19 +9,32 @@ const Navbar = () => {
     const handleClick = () => setClick(!click);
 
     const [color,setColor] = useState(false);
-    const changecolor = () => {
-        if(window.ScreenY >= 100){
-            setColor(true);
-        }else{
-            setColor(false);
-        }
-    };
-    window.addEventListener("scroll", setColor);
-
+    useEffect(() => {
+        const changeColor = () => {
+            if (window.scrollY >= 100) {
+                setColor(true);
+            } else {
+                setColor(false);
+            }
+        };
+        
+        window.addEventListener("scroll", changeColor);
+        
+        return () => {
+            window.removeEventListener("scroll", changeColor);
+        };
+    }, []);
+    
   return (
     <div className={color ? "header header-bg": "header"}>
         <Link to={"/"}>
-            <h1>Sam's Portfolio</h1> 
+            <div className="profile-pic-container">
+                <img 
+                    src={profilePic} 
+                    alt="Profile" 
+                    className="profile-pic"
+                />
+            </div>   
         </Link>
         <ul className={click ? "Nav-menu active" : "Nav-menu"}>
                 <li>
