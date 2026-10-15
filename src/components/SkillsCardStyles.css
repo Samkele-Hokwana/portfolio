@@ -1,0 +1,7 @@
+.skills-card-container{
+    border-radius: 10px;
+    background: blue;
+}
+.skills-card-container .skill-card{
+    border-radius: 10px;
+}
